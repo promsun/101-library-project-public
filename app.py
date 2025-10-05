@@ -39,8 +39,7 @@ class Book:
         if self.available:
             self.available = False
             return True
-        else:
-            return False
+        return False
 
     def return_book(self):
         """
@@ -115,6 +114,7 @@ class Library:
         for book in self.books:
             if book.title.lower() == title.lower():
                 return book
+            return None
 
 
 # =================================================================
