@@ -18,16 +18,24 @@ To run this project, you will need `git`, `python` and `pip` installed on your 
 ## Getting Started 🚀
 
 1. Clone down this repository. And navigate to the project directory.
-2. Install the necessary dependencies.
+2. Create a virtual environment (optional but recommended).
+
+   ```bash
+   python -m venv .venv
+   source .venv/Scripts/activate   # On Git Bash (Windows)
+   .venv\Scripts\activate   # On Command Prompt (Windows)
+   ```
+
+3. Install the necessary dependencies.
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the development server.
+4. Run the development server.
 
    ```bash
    streamlit run app.py
    ```
 
-4. Open [http://localhost:8501](http://localhost:8501/) to view it with your browser.
+5. Open [http://localhost:8501](http://localhost:8501/) to view it with your browser.
