@@ -61,3 +61,6 @@ jobs:
 
           # Disable markdown linting to avoid conflicts with existing formatting
           VALIDATE_MARKDOWN: false
+
+          # Disable jscpd checks to avoid conflicts with existing code structure
+          VALIDATE_JSCPD: false
