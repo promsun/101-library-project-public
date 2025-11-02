@@ -114,7 +114,7 @@ class Library:
         for book in self.books:
             if book.title.lower() == title.lower():
                 return book
-            return None
+        return None
 
 
 # =================================================================
