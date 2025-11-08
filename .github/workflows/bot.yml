@@ -1,0 +1,33 @@
+name: Auto Push Empty Commit
+
+on:
+  schedule:
+    # Run every 10 hours
+    - cron: "0 */10 * * *"
+  workflow_dispatch: # Allow manual triggering
+
+# Set default permissions to read-all
+permissions: read-all
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # To push commits to the repository
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Create and push empty commit
+        run: |
+          git commit --allow-empty -m "chore: keep repo active [automated]"
+          git push
