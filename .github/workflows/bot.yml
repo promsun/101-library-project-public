@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: false
+          persist-credentials: true
 
       - name: Configure Git
         run: |
@@ -31,4 +31,4 @@ jobs:
       - name: Create and push empty commit
         run: |
           git commit --allow-empty -m "chore: keep repo active [automated]"
-          git push
+          git push origin main
